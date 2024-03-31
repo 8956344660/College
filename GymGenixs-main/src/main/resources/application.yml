@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: gymgenixs
+  datasource:
+    url: jdbc:mysql://localhost:3306/gym
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        generate_statistics: true
+        format-sql: true
+        ddl-auto: update
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  web:
+    resources:
+      static-locations: classpath:/templates/
+
+
+server:
+  port: 8085
+
+
