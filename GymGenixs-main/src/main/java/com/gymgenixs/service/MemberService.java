@@ -25,7 +25,7 @@ public class MemberService {
 
         log.info("Data received {}", memberStringDetails);
         Member member = gson.fromJson(memberStringDetails, Member.class);
-        member.setExpireDate(member.getExpireDate().plusDays(member.getValidityInDays()));
+       // member.setExpireDate(member.getExpireDate().plusDays(member.getValidityInDays()));
         log.info("data -> "+gson.toJson(member));
         return memberDao.save(member);
     }

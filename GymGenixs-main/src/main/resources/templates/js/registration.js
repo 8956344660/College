@@ -61,14 +61,14 @@ $(function () {
             var plan = Window.plan[planIndex];
             var price = $("#price").val();
             var contact_number = $("#contact-number").val();
-            var date = $("#date").val();
+           // var date = $("#date").val();
             var gender = $("#gender").val();
-            var status = 'ACTIVE';
-            var expireDate = date;
+            var status = 'INACTIVE';
+           // var expireDate = date;
 
             var data = {
-                'paidDate': date,
-                'expireDate': expireDate,
+               // 'paidDate': date,
+                //'expireDate': expireDate,
                 'status': status,
                 'nameOfParticipant': name,
                 'emergencyContactPerson': contact_person,

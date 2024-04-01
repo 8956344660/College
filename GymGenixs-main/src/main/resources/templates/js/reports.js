@@ -27,7 +27,7 @@ $(function () {
         });
     });
 
-    function loadPaymentsOrderByDesc(){
+    function loadPaymentsOrderByDesc() {
         console.log('loading payments');
         var url = getAllPayments;
         $.ajax({
@@ -39,22 +39,22 @@ $(function () {
             success: function (result) {
                 $('#payments-table').empty();
                 $('#payments-table').append(
-                    '<tr>'+
-                        '<th>NAME OF PARTICIPANT</th>'+
-                        '<th>MEMBER ID</th>'+
-                        '<th>PLAN</th>'+
-                        '<th>PRICE</th>'+
-                        '<th>PAID DATE</th>'+
+                    '<tr>' +
+                    '<th>NAME OF PARTICIPANT</th>' +
+                    '<th>MEMBER ID</th>' +
+                    '<th>PLAN</th>' +
+                    '<th>PRICE</th>' +
+                    '<th>PAID DATE</th>' +
                     '</tr>');
                 $.each(result, function (index, value) {
                     console.log(index + ' -> ' + value);
                     $('#payments-table').append(
                         '<tr id="' + value.id + '">' +
-                            '<td>' + value.nameOfParticipant + '</td>' +
-                            '<td>' + value.memberId + '</td>' +
-                            '<td>' + value.plan + '</td>' +
-                            '<td>' + value.price + '</td>' +
-                            '<td>' + value.paidDate + '</td>' +
+                        '<td>' + value.nameOfParticipant + '</td>' +
+                        '<td>' + value.memberId + '</td>' +
+                        '<td>' + value.plan + '</td>' +
+                        '<td>' + value.price + '</td>' +
+                        '<td>' + value.paidDate + '</td>' +
                         '</tr>');
                 });
 
@@ -70,5 +70,13 @@ $(function () {
     }
 
     loadPaymentsOrderByDesc();
+    function reset() {
+        $('#cancel').on('click', function () {
+            $("#reports-form").trigger('reset');
+            $('#total-label').text('');
+
+        });
+    };
+    reset();
 
 });
