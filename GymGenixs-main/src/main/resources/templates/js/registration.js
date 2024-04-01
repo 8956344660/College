@@ -95,7 +95,8 @@ $(function () {
 
 
                     console.log(result);
-                    console.log("success > " + result)
+                    console.log("success > " + result);
+                    $("#member-reg").trigger('reset'); 
                 },
                 error: function (error) {
                     console.log(error);
