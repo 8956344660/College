@@ -57,16 +57,19 @@ $(function () {
                     console.log(index + ' -> ' + value);
                     $('#planTable').append(
                         '<tr id="' + value.planId + '">' +
+                        '<td style="display: none">' + value.planId + '</td>' +
                         '<td>' + value.planName + '</td>' +
                         '<td>' + value.validityInDays + '</td>' +
                         '<td>' + value.amount + '</td>' +
                         '<td> <button class="edit-button">Edit</button> </td>' +
                         '<td> <button class="delete-button">Delete</button> </td>' +
                         '</tr>');
-                    deletePlan();
-                    editbtn();
+                    
 
                 });
+
+                deletePlan();
+                editbtn();
 
                 console.log(result);
                 console.log("success > ")
@@ -85,8 +88,8 @@ $(function () {
         var plan_name = $("#plan-name").val();
         var validity = $("#validity").val();
         var amount = $("#amount").val();
-
-        console.log(plan_name + ' ' + validity + ' ' + amount);
+        var planId = $('#plan-id-label').text();
+        console.log(planId+' '+plan_name + ' ' + validity + ' ' + amount);
 
         var url = addPlanUrl;
         var data = {
@@ -94,6 +97,10 @@ $(function () {
             'validityInDays': validity,
             'amount': amount
         };
+
+        if(planId!=''){
+            data.planId = planId;
+        }
 
         $.ajax({
             url: url,
@@ -127,16 +134,26 @@ $(function () {
 
     function editbtn() {
         $(".edit-button").on('click', function () {
-            var td = $(this).parent().parent().find('td');
+
+            var planData = $(this).parent().parent().map(function(i, row) {
+                const data = $('td', row);
+                console.log($('td', row));
+                return {
+                    planId: data.eq(0).text().trim(),
+                    planName: data.eq(1).text().trim(),
+                    validityInDays: data.eq(2).text().trim(),
+                    amount: data.eq(3).text().trim()
+                }
+              }).get()[0];
+              console.log("data -> "+ JSON.stringify(planData));
             $("#planForm").trigger('reset');
-           
-            console.log('click'+$(td [0]).val());
 
-            $.each(td, function (i, v) {
-                console.log(i + ' -> ' + v);
-            });
-
-
+            $('#plan-id-label').text(planData['planId']);
+            $('#plan-name').val(planData['planName']);
+            $('#validity').val(planData['validityInDays']);
+            $('#amount').val(planData['amount']);
+            
+            
         });
 
     };
