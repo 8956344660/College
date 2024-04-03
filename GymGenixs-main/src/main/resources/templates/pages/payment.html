@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rgistration</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
@@ -17,7 +17,7 @@
         }
 
         body {
-            background-color: #f9f6f6;
+            background-color: #5369686a;
         }
 
         .container {
@@ -72,8 +72,9 @@
 
         .button {
             display: flex;
-            justify-content: end;
+            justify-content: space-around;
             margin-top: 30px;
+            
 
         }
 
@@ -83,6 +84,7 @@
             border: transparent solid 2px;
             color: #fbf9f9;
             transition: 0.4s ease-in;
+           
         }
 
         button:hover {
@@ -179,14 +181,16 @@
                         <input type="date" id="date" name="date">
                     </div>
                     <div class="button">
-                        <button type="button" id="save">Pay</button>
-                    </div>
-                    <div class="button">
                         <button type="reset">Cancel</button>
+                        <button type="button" id="save">Pay</button>                       
                     </div>
+                   
             </form>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

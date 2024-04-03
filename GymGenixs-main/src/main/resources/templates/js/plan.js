@@ -44,17 +44,27 @@ $(function () {
             dataType: 'json',
             success: function (result) {
                 $('#planTable').empty();
+                $('#planTable').append(
+                    '<tr>' +
+                    '<th>Name</th>' +
+                    '<th>Validity</th>' +
+                    '<th>Price</th>' +
+                    '<th>Edit</th>' +
+                    '<th>Delete</th>' +
+
+                    '</tr>');
                 $.each(result, function (index, value) {
                     console.log(index + ' -> ' + value);
                     $('#planTable').append(
                         '<tr id="' + value.planId + '">' +
-                            '<td>' + value.planName + '</td>' +
-                            '<td>' + value.validityInDays + '</td>' +
-                            '<td>' + value.amount + '</td>' +
-                            '<td> <button class="edit-button">Edit</button> </td>' +
-                            '<td> <button class="delete-button">Delete</button> </td>' +
+                        '<td>' + value.planName + '</td>' +
+                        '<td>' + value.validityInDays + '</td>' +
+                        '<td>' + value.amount + '</td>' +
+                        '<td> <button class="edit-button">Edit</button> </td>' +
+                        '<td> <button class="delete-button">Delete</button> </td>' +
                         '</tr>');
                     deletePlan();
+                    editbtn();
 
                 });
 
@@ -100,7 +110,7 @@ $(function () {
                 console.log("success > ")
                 $("#planTable tr").remove();
                 loadPlan();
-                $("#planForm").trigger('reset'); 
+                $("#planForm").trigger('reset');
             },
             error: function (error) {
                 console.log(error);
@@ -115,5 +125,20 @@ $(function () {
     loadPlan();
     $("#save").click(savePlan);
 
+    function editbtn() {
+        $(".edit-button").on('click', function () {
+            var td = $(this).parent().parent().find('td');
+            $("#planForm").trigger('reset');
+           
+            console.log('click'+$(td [0]).val());
+
+            $.each(td, function (i, v) {
+                console.log(i + ' -> ' + v);
+            });
+
+
+        });
+
+    };
 
 });
