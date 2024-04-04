@@ -171,13 +171,15 @@
             text-decoration: underline;
         }
     </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./../js/user-registration.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="form-box login">
             <h2>Gymgenixs Registration</h2>
-            <form action="#">
+            <form id="user-reg">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person-add"></ion-icon>
@@ -198,14 +200,14 @@
                     <span class="icon">
                         <ion-icon name="mail-unread"></ion-icon>
                     </span>
-                    <input type="email" required autofocus>
+                    <input type="email" id="userId" required autofocus>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock"></ion-icon>
                     </span>
-                    <input type="password" required>
+                    <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
                 <div class="input-box">
@@ -232,7 +234,7 @@
                     </select>
                 </div><br><br>
 
-                <button type="button" class="btn">Register</button>
+                <button type="button" id="save" class="btn">Register</button>
                 <div class="login-register">
                     <p>If you have an account?<a href="login.html" class="ragister-link"> Login Here</a></p>
                 </div>

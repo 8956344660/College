@@ -6,6 +6,7 @@ import lombok.Data;
 @Entity
 @Table(name = "LOGIN")
 @Data
+@Entity
 public class Login {
     @Id
     @Column(name = "USER_ID")
@@ -22,6 +23,13 @@ public class Login {
     String isAccountLock;
     @Column(name = "LAST_PASSWORD_HISTORY")
     String lastPasswordList;
+    @Column(name = "ADDRESS")
+    String address;
+    @Column(name = "GENDER")
+    String gender;
+    @Column(name = "MOBILE_NO")
+    String mobileNo;
+
 
 
 }
