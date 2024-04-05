@@ -477,11 +477,17 @@ button:hover{
   gap: 6.5vw;
   padding: 0 100px;
 }
-#footer > img {
+#footer >img {
   position: absolute;
   left: 0;
   height: 100%;
   z-index: 0;
+  align-items: start;
+  
+}
+#gymlogo{
+  margin-bottom: 50px;
+ 
 }
 #f1 img {
   height: 100px;
@@ -536,7 +542,7 @@ letter-spacing: 10px;
 
 }
 #footer a:hover{
-  border-radius: 8px;
+  border-radius: 50px;
   background-color: rgb(52, 52, 10);
   transition: 0.5s;
 }
