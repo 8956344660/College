@@ -7,6 +7,6 @@ import lombok.Data;
 public class ClientDto {
     int errorCode;
     String errorMessege;
-    JsonObject data;
+    Object data;
 
 }

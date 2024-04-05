@@ -1,31 +1,19 @@
 $(function(){
 
     var domainUrl = "http://localhost:8085";
-    var saveLogin = domainUrl + '/saveLogin';
     var doLoginUrl = domainUrl + '/login';
-    
-    function doUserRegistration() {
 
-        $('#save').click(function () {
-            console.log('saving user');
-            var url = saveLogin;
+    function dologinFunction() {
 
-            var name = $('#name').val();
-            var mobile = $("#mobile").val();
+        $('#login').click(function () {
+            console.log('login');
+            var url = doLoginUrl;
             var userId = $("#userId").val();
             var password = $("#password").val();
-            var address = $("#address").val();
-            var gender = $("#gender").val();
-
-           // var expireDate = date;
 
             var data = {
-                'mobile': mobile,
-                'userId': userId,
-                'password': password,
-                'address': address,                
-                'gender': gender,
-                'role': 'user'
+                'username': userId,
+                'password': password
             };
 
             $.ajax({
@@ -43,7 +31,21 @@ $(function(){
 
                     console.log(result);
                     console.log("success > " + result);
-                    $("#user-reg").trigger('reset'); 
+                    $("#login-form").trigger('reset'); 
+
+                    if(result.errorCode == 400){
+                        console.log('login success condition')
+                        if(result.data.role == 'admin'){
+                            console.log('admin page')
+                            window.location.href="admin.html";
+                        }
+                        else window.location.href="Gym.html";
+                    }
+                    else{
+                        //show bootstratp pop
+                    }
+
+
                 },
                 error: function (error) {
                     console.log(error);
@@ -55,7 +57,7 @@ $(function(){
 
     };
 
-    doUserRegistration();
+    dologinFunction();
 
-    
+
 });
