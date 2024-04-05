@@ -2,7 +2,9 @@ package com.gymgenixs.service;
 
 import com.google.gson.Gson;
 import com.gymgenixs.dao.LoginDao;
+import com.gymgenixs.dto.ClientDto;
 import com.gymgenixs.entity.Login;
+import com.gymgenixs.utils.Md5;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +21,7 @@ public class LoginService {
 
     Gson gson = new Gson();
 
-    public Plan addLogin(String userStringDetails){
+    public Login addLogin(String userStringDetails){
 
         log.info("Data received {}", userStringDetails);
         Login login = gson.fromJson(userStringDetails, Login.class);
@@ -32,8 +34,12 @@ public class LoginService {
         return loginDao.findAll();
     }
 
-    public void deletePlan(long id){
+    public void deletePlan(String id){
         loginDao.deleteById(id);
 //        planDao.delete();
+    }
+
+    public ClientDto doLogin(String userName, String passward){
+        return null;
     }
 }

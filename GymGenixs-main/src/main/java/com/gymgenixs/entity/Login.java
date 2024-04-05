@@ -28,6 +28,12 @@ public class Login {
     String firstName;
     @Column(name = "LAST_NAME")
     String lastName;
+    @Column(name = "ADDRESS")
+    String address;
+    @Column(name = "GENDER")
+    String gender;
+    @Column(name = "MOBILE_NO")
+    String mobileNo;
 
 
 }

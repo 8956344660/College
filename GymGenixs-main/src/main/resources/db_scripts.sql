@@ -41,3 +41,18 @@ create table PLAN(
         MEMBER_ID int
 
     );
+
+    create table login(
+    USER_ID varchar(100) primary key,
+    PASSWORD varchar(100),
+    ROLE varchar(10),
+    STATUS	varchar(100),
+    WRONG_ATTEMPT_COUNT	int,
+    IS_ACCOUNT_LOCK	varchar(10),
+    LAST_PASSWORD_HISTORY	varchar(350),
+    ADDRESS	varchar(1000),
+    GENDER	varchar(50),
+    MOBILE_NO	varchar(50),
+    FIRST_NAME	varchar(50),
+        LAST_NAME	varchar(50)
+    );
