@@ -53,7 +53,7 @@ $(function () {
                     '<th>Emergency Contact Person </th>' +
                     '<th>Relationship</th>' +
                     '<th>Relationship Number</th>' +
-                    '<th>Edit</th>' +
+                    // '<th>Edit</th>' +
                     '<th>Delete</th>' +
                     '</tr>');
 
@@ -69,7 +69,7 @@ $(function () {
                         '<td>' + value.emergencyContactPerson + '</td>' +
                         '<td>' + value.relationship + '</td>' +
                         '<td>' + value.emergencyContactNumber + '</td>' +
-                        '<td> <button class="edit-button">Edit</button> </td>' +
+                        // '<td> <button class="edit-button">Edit</button> </td>' +
                         '<td> <button class="delete-button">Delete</button> </td>' +
                         '</tr>');
 

@@ -7,7 +7,6 @@ import com.gymgenixs.entity.Payment;
 import com.gymgenixs.gson.LocalDateTypeAdapter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -18,6 +17,9 @@ import java.util.List;
 public class PaymentService {
     @Autowired
     PaymentDao paymentDao;
+
+    @Autowired
+    MemberService memberService;
 
     Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter()).create();
 

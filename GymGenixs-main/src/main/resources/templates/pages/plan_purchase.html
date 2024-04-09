@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rgistration</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background-color: #5369686a;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .box {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fbfcfd8e;
+            margin: 0 auto;
+            margin-top: 50px;
+            box-shadow: 10px 10px 1cap rgba(3, 2, 2, 0.3);
+            border-radius: 10px;
+        }
+
+        .formcontainer {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .controler {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav a img {
+            height: 60px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 6px 10px;
+            border: 1px solid #6133d7;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline-color: crimson;
+        }
+
+        .button {
+            display: flex;
+            justify-content: end;
+            margin-top: 20px;
+
+        }
+
+        button {
+            background-color: #39d721;
+            border-radius: 5px;
+            border: transparent solid 2px;
+            color: #fbf9f9;
+            transition: 0.4s ease-in;
+        }
+
+        button:hover {
+            background-color: #f00909;
+            transition: 0.4s ease-out;
+            cursor: pointer;
+        }
+
+        .addcontroler {
+            grid-column: 1/span 2;
+        }
+
+        .addcontroler textarea {
+            width: 100%;
+        }
+
+        @media(max-width: 470px) {
+            .addcontroler {
+                grid-column: 1/span 1;
+            }
+        }
+
+        ;
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./../js/registration.js">
+
+    </script>
+</head>
+
+<body>
+    <!--navbar start-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href=""><img src="img/logo.png" alt="GYMGENIX Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Gym.html"> Back to Home</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+    <!--navbar stop-->
+
+    <div class="container">
+        <div class="box">
+            <h1>GYMGENIXS<h3>Add New Member</h3>
+            </h1>
+            <img src="" alt="">
+            <form id="member-reg">
+                <div class="formcontainer">
+
+                    <div class="controler">
+                        <label for="name">Name of Participant:</label>
+                        <input id="name" type="text" name="name" placeholder="Name of Participant...">
+                    </div>
+                    <div class="controler">
+                        <label for="contact-number">Contact Number:</label>
+                        <input type="number" id="contact-number" name="contact-number" placeholder="Contact Numberr...">
+                    </div>
+                    <div class="controler">
+                        <label for="contact-person">Emergency contact person:</label>
+                        <input type="text" id="contact-person" name="contact-person"
+                            placeholder="Emergency contact person....">
+                    </div>
+                    <div class="controler">
+                        <label for="relationship">Relationship:</label>
+                        <input type="text" id="relationship" name="relationship" placeholder="Enter relationship....">
+                    </div>
+
+                    <div class="controler">
+                        <label for="emergency-contact-number">Emergency Contact Number:</label>
+                        <input type="number" id="emergency-contact-number" name="emergency-contact-number"
+                            placeholder="Emergency Contact Number...">
+                    </div>
+                    <div class="controler">
+                        <label for="plan">Plan:</label>
+                        <select id="plan" name="plan">
+                            <option value="">select plan</option>
+                        </select>
+                    </div>
+                    <div class="controler">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" placeholder="price of Plan....">
+                    </div>
+
+
+                    <!-- <div class="controler">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date">
+                    </div> -->
+                    <div class="controler">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender">
+                            <option value="">select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                    </div>
+                    <div class="button">
+                        <button type="button" id="save">Save</button>
+                    </div>
+                    <div class="button">
+                        <button type="reset">Cancel</button>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

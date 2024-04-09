@@ -60,6 +60,7 @@ cursor {
 }
 #nav img {
   height: 4.5vw;
+  border-radius: 30px;
 }
 #nav h4 {
   text-transform: uppercase;
@@ -77,6 +78,7 @@ video {
 #nav img:hover{
   animation: glow 0.3s infinite;
   font-size:20px;
+  background: transparent;
 }
 @keyframes glow{
   0%,100%{
@@ -596,3 +598,9 @@ transition: background-color 0.3s ease-in-out;
 .purchase-button:hover {
 background-color: #00b318;
 }
+
+
+
+
+/* java script code */
+
