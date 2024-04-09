@@ -17,5 +17,7 @@ public class Plan {
     int validityInDays;
     @Column(name = "AMOUNT")
     int amount;
+    @Column(name = "DESCRIPTION")
+    String description;
 
 }

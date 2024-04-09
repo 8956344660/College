@@ -49,6 +49,7 @@ $(function () {
                     '<th>Name</th>' +
                     '<th>Validity</th>' +
                     '<th>Price</th>' +
+                    '<th>Description</th>' +
                     '<th>Edit</th>' +
                     '<th>Delete</th>' +
 
@@ -61,6 +62,7 @@ $(function () {
                         '<td>' + value.planName + '</td>' +
                         '<td>' + value.validityInDays + '</td>' +
                         '<td>' + value.amount + '</td>' +
+                        '<td>' + value.description + '</td>' +
                         '<td> <button class="edit-button">Edit</button> </td>' +
                         '<td> <button class="delete-button">Delete</button> </td>' +
                         '</tr>');
@@ -89,13 +91,15 @@ $(function () {
         var validity = $("#validity").val();
         var amount = $("#amount").val();
         var planId = $('#plan-id-label').text();
+        var planDesc = $('#plan-desc').val();
         console.log(planId+' '+plan_name + ' ' + validity + ' ' + amount);
 
         var url = addPlanUrl;
         var data = {
             'planName': plan_name,
             'validityInDays': validity,
-            'amount': amount
+            'amount': amount,
+            'description': planDesc
         };
 
         if(planId!=''){
@@ -142,7 +146,8 @@ $(function () {
                     planId: data.eq(0).text().trim(),
                     planName: data.eq(1).text().trim(),
                     validityInDays: data.eq(2).text().trim(),
-                    amount: data.eq(3).text().trim()
+                    amount: data.eq(3).text().trim(),
+                    description: data.eq(4).text().trim()
                 }
               }).get()[0];
               console.log("data -> "+ JSON.stringify(planData));
@@ -152,6 +157,7 @@ $(function () {
             $('#plan-name').val(planData['planName']);
             $('#validity').val(planData['validityInDays']);
             $('#amount').val(planData['amount']);
+            $('#plan-desc').val(planData['description']);
             
             
         });

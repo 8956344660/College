@@ -26,4 +26,7 @@ public class Payment {
     LocalDate paidDate;
     @Column(name = "SYSTEM_CURRENT_DATE")
     LocalDate date;
+
+    @Transient
+    int validityInDays;
 }

@@ -56,3 +56,8 @@ create table PLAN(
     FIRST_NAME	varchar(50),
         LAST_NAME	varchar(50)
     );
+
+
+
+    ALTER TABLE PLAN
+    ADD DESCRIPTION varchar(1000);

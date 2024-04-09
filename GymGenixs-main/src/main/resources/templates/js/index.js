@@ -25,7 +25,7 @@ $(function () {
                         ' rerum doloremque maxime blanditiis nemo,' +
                         'laboriosam reprehenderit.</h4><br><br>' +
                         '<div class="price">' + value.amount + ' &#8377;</div><br>' +
-                        '<a href="plan_purchase.html"><button class="purchase-button">Purchase</button></a>' +
+                        '<a href="use_register.html"><button class="purchase-button">Purchase</button></a>' +
                         '</div>');
 
 

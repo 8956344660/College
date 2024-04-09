@@ -69,6 +69,7 @@ $(function () {
                 'paidDate': date,
                 'nameOfParticipant': name,
                 'plan': plan.planName,
+                'validityInDays': plan.validityInDays,
                 'price': price,
                 'memberId': memberId
             };
