@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
 
     var domainUrl = "http://localhost:8085";
     var doLoginUrl = domainUrl + '/login';
@@ -31,17 +31,17 @@ $(function(){
 
                     console.log(result);
                     console.log("success > " + result);
-                    $("#login-form").trigger('reset'); 
+                    $("#login-form").trigger('reset');
 
-                    if(result.errorCode == 400){
+                    if (result.errorCode == 400) {
                         console.log('login success condition')
-                        if(result.data.role == 'admin'){
+                        if (result.data.role == 'admin') {
                             console.log('admin page')
-                            window.location.href="admin.html";
+                            window.location.href = "admin.html";
                         }
-                        else window.location.href="Gym.html";
+                        else window.location.href = "index.html";
                     }
-                    else{
+                    else {
                         //show bootstratp pop
                     }
 

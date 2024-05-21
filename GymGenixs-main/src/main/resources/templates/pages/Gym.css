@@ -102,7 +102,7 @@ video {
   
 }
 h4 button{
-  width: 100px;
+  width: 60px;
   height: 30px;
   background-color: rgb(84, 67, 28);
   border-radius: 10px;
@@ -598,6 +598,7 @@ transition: background-color 0.3s ease-in-out;
 .purchase-button:hover {
 background-color: #00b318;
 }
+
 
 
 
